@@ -11,7 +11,7 @@
     <?php
         include("config.php");
 
-        $servername = "http://cislinux.hfcc.edu/~ahussain17";
+        $servername = "localhost";
         $username = $_SQL_USERNAME;
         $password = $_SQL_PASSWORD;
         $database = $_SQL_DATABASE;
