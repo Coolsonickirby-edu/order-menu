@@ -19,5 +19,7 @@ $result = $stmt->fetchAll();
 $DBH = null;
 
 foreach($result as $item){
-    echo $item;
+    foreach($item as $i){
+        echo $i;
+    }
 }
