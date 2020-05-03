@@ -53,9 +53,7 @@
         // $couponcode = $item["couponcode"];
 
 
-        foreach ($item as $i){
-            echo "{$i}<br>";
-        }
+        print $item;
 
 
         // echo "<table><tr><th>Items</th><th>Quantity</th></tr>";
