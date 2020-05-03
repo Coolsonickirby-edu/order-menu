@@ -166,5 +166,6 @@ function insertItem($item, $DBH, $payment_id){
 }
 
 echo "<p>Order successfully placed.</p>";
+
 // Close database connection
 $DBH = null;
