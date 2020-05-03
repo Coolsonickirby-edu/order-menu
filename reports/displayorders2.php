@@ -14,6 +14,7 @@
         <h2 class="blue center">Order Details</h2>
         <?php
         include('../config.php');
+        include('../convert_text.php');
 
         $id = $_GET["payment_id"];
 
@@ -29,41 +30,17 @@
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        foreach($result as $item){
-            foreach ($item as $i){
-                echo $i . "<br>";
-            }
-            echo "<br>";
-        }
-
+        
         // Close database connection
         $DBH = null;
 
-
-        // $wings = $item["wings"];
-        // $nachos = $item["nachos"];
-        // $dip = $item["dip"];
-        // $quesadilla = $item["quesadilla"];
-        // $chips = $item["chips"];
-        // $calamari = $item["calamari"];
-        // $pastrami = $item["pastrami"];
-        // $panini = $item["panini"];
-        // $reuben = $item["reuben"];
-        // $vegetarian = $item["vegetarian"];
-        // $turkey = $item["turkey"];
-        // $shrimp = $item["shrimp"];
-        // $chickenpasta = $item["chickenpasta"];
-        // $angelhair = $item["angelhair"];
-        // $alfredo = $item["alfredo"];
-        // $couponcode = $item["couponcode"];
-
-
-        //echo "<pre>" . var_dump($item) . "</pre>";
-
-
-        // echo "<table><tr><th>Items</th><th>Quantity</th></tr>";
-        // echo "<tr><td>{$item["lastname"]}</td><td></td></tr>";
-        // echo "</table>";
+        echo "<table><tr><th>Order ID</th><th>Items</th><th>Quantity</th></tr>";
+        foreach ($result as $item) {
+            $item_name = TranslateText::convertText($item["menuitem"]);
+            echo "<tr><td>{$item["order_id"]}</td><td>{$item_name}</td><td>{$item["quantity"]}</td></tr>";
+        }
+        
+        echo "</table>";
         ?>
         <br>
     </div><br>
