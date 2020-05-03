@@ -28,7 +28,7 @@
 			echo $e->getMessage();
 		}
 		$query = "SELECT menuitem AS ITEM, sum(quantity) AS QUANTITY FROM orders GROUP BY menuitem order by QUANTITY asc limit 5";
-		$stmt = $DBH->prepare($sql);
+		$stmt = $DBH->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 

@@ -28,7 +28,7 @@
 			echo $e->getMessage();
 		}
 		$query = "SELECT dayname(orderdate) AS DAY, count(*) TOTAL FROM payment GROUP BY dayname(orderdate)";
-		$stmt = $DBH->prepare($sql);
+		$stmt = $DBH->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 

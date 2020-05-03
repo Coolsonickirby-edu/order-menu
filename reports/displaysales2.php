@@ -28,7 +28,7 @@
 			echo $e->getMessage();
 		}
 		$query = "SELECT MONTHNAME(orderdate) AS MONTH, YEAR(orderdate) AS YEAR, sum(total) AS TOTAL FROM payment GROUP BY YEAR(orderdate), MONTH(orderdate)";
-		$stmt = $DBH->prepare($sql);
+		$stmt = $DBH->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 
