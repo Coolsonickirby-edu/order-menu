@@ -13,5 +13,11 @@ $sql = "SELECT id FROM payment WHERE id = {$id}";
 
 $stmt = $DBH->prepare($sql);
 $stmt->execute();
+$result = $stmt->fetchAll();
 
-echo $stmt;
+// Close database connection
+$DBH = null;
+
+foreach($result as $item){
+    echo $item;
+}
