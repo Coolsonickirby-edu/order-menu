@@ -14,7 +14,7 @@
         <h2 class="blue center">CIS 122 Restaurant - Menu Orders</h2>
         <?php
         // database login credentials
-        include('config.php'); // Establish database connection with PDO
+        include('../config.php'); // Establish database connection with PDO
         try {
             $DBH = new PDO("mysql:host=$host;dbname=$_SQL_DATABASE", $_SQL_USERNAME, $_SQL_PASSWORD);
         } catch (PDOException $e) {
