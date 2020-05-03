@@ -1,6 +1,8 @@
 <?php
 include('config.php');
 
+$date = date('Y-m-d H:i:s');
+
 // Get post variables from HTML form
 $wings = substr(filter_input(INPUT_POST, 'wings', FILTER_SANITIZE_NUMBER_INT), 0, 2);
 $nachos = substr(filter_input(INPUT_POST, 'nachos', FILTER_SANITIZE_NUMBER_INT), 0, 2);
