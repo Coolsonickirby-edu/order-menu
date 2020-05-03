@@ -20,7 +20,7 @@
         } catch (PDOException $e) {
             echo $e->getMessage();
         } // Run Query
-        $sql = "SELECT * FROM payment2";
+        $sql = "SELECT * FROM payment";
         $stmt = $DBH->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
