@@ -9,7 +9,7 @@ try {
     echo $e->getMessage();
 }
 
-$sql = "SELECT payment_id FROM payment WHERE payment_id = {$id}";
+$sql = "SELECT * FROM payment WHERE payment_id={$id}";
 
 $stmt = $DBH->prepare($sql);
 $stmt->execute();
