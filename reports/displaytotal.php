@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="CIS Restaurant, Lunch Menu">
+	<meta name="description" content="CIS Restaurant: Lunch Menu">
+	<title>CIS Restaurant Menu</title>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+
+	<div id="container">
+
+		<h2 class="blue center">Top 5 Most Popular Menu Items Sold</h2>
+
+		<?php
+
+		// database login credentials
+		include('../config.php');
+
+		$rownum = 0;
+
+		try {
+			$DBH = new PDO("mysql:host=$_SQL_ADDRESS;dbname=$_SQL_DATABASE", $_SQL_USERNAME, $_SQL_PASSWORD);
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+		$query = "SELECT menuitem AS ITEM, sum(quantity) AS QUANTITY FROM orders GROUP BY menuitem order by QUANTITY desc limit 5";
+		$stmt = $DBH->prepare($sql);
+		$stmt->execute();
+		$result = $stmt->fetchAll();
+
+
+		echo "<table class=\"table2 tablectr\">";
+		echo "<tr><th>Menu Item</th><th>Quantity Sold</th></tr>";
+		foreach($result as $row) {
+			echo '<tr">';
+			echo "<td>" . $row['ITEM'] . "</td><td>" . $row['QUANTITY'] . "</td>";
+			echo "</tr>";
+			$rownum++;
+		}
+		echo "</table>";
+
+		$DBH = null;
+
+		?>
+		<br>
+	</div>
+
+</body>
+
+</html>

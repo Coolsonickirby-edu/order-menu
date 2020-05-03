@@ -34,7 +34,7 @@
         // Close database connection
         $DBH = null;
 
-        echo "<table><tr><th>Order ID</th><th>Items</th><th>Quantity</th></tr>";
+        echo "<table class=\"table2 tablectr\"><tr><th>Order ID</th><th>Items</th><th>Quantity</th></tr>";
         foreach ($result as $item) {
             $item_name = TranslateText::convertText($item["menuitem"]);
             echo "<tr><td>{$item["order_id"]}</td><td>{$item_name}</td><td>{$item["quantity"]}</td></tr>";
