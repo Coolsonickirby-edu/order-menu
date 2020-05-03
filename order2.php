@@ -85,8 +85,7 @@ $sql = $DBH->prepare(
 
 $sql->execute(
     array(
-        '
-        :firstname' => $firstname,
+        ':firstname' => $firstname,
         ':lastname' => $lastname,
         ':phone1' => $phone1,
         ':phone2' => $phone2,
