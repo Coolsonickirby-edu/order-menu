@@ -24,6 +24,10 @@ class TranslateText{
                 return "Reuben Sandwich";
             case "vegetarian":
                 return "Vegetarian Sandwich";
+            case "shrimp":
+                return "Parmesan Shrimp Pasta";
+            case "turkey":
+                return "Chipotle Honey Mustard Turkey Wrap";
             default:
                 return $text;
         }
