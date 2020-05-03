@@ -53,7 +53,7 @@
         // $couponcode = $item["couponcode"];
 
 
-        var_dump($item);
+        echo "<pre>" . var_dump($item) . "</pre>";
 
 
         // echo "<table><tr><th>Items</th><th>Quantity</th></tr>";
