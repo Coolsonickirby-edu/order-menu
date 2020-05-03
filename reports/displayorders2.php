@@ -35,22 +35,22 @@
         $DBH = null;
 
 
-        $wings = $item["wings"];
-        $nachos = $item["nachos"];
-        $dip = $item["dip"];
-        $quesadilla = $item["quesadilla"];
-        $chips = $item["chips"];
-        $calamari = $item["calamari"];
-        $pastrami = $item["pastrami"];
-        $panini = $item["panini"];
-        $reuben = $item["reuben"];
-        $vegetarian = $item["vegetarian"];
-        $turkey = $item["turkey"];
-        $shrimp = $item["shrimp"];
-        $chickenpasta = $item["chickenpasta"];
-        $angelhair = $item["angelhair"];
-        $alfredo = $item["alfredo"];
-        $couponcode = $item["couponcode"];
+        // $wings = $item["wings"];
+        // $nachos = $item["nachos"];
+        // $dip = $item["dip"];
+        // $quesadilla = $item["quesadilla"];
+        // $chips = $item["chips"];
+        // $calamari = $item["calamari"];
+        // $pastrami = $item["pastrami"];
+        // $panini = $item["panini"];
+        // $reuben = $item["reuben"];
+        // $vegetarian = $item["vegetarian"];
+        // $turkey = $item["turkey"];
+        // $shrimp = $item["shrimp"];
+        // $chickenpasta = $item["chickenpasta"];
+        // $angelhair = $item["angelhair"];
+        // $alfredo = $item["alfredo"];
+        // $couponcode = $item["couponcode"];
 
 
         foreach ($item as $i){
