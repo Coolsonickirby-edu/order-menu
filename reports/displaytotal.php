@@ -19,6 +19,8 @@
 
 		// database login credentials
 		include('../config.php');
+		include('../convert_text.php');
+
 
 		$rownum = 0;
 
