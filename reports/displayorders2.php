@@ -13,6 +13,5 @@ $sql = "SELECT id FROM payment WHERE id = {$id}";
 
 $stmt = $DBH->prepare($sql);
 $stmt->execute();
-$result = $stmt->fetchAll();
 
-echo $result;
+echo $stmt;
