@@ -18,8 +18,4 @@ $result = $stmt->fetchAll();
 // Close database connection
 $DBH = null;
 
-foreach($result as $item){
-    foreach($item as $i){
-        echo $i;
-    }
-}
+echo $result[0]["lastname"];
