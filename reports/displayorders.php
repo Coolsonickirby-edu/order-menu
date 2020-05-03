@@ -16,7 +16,7 @@
         // database login credentials
         include('../config.php'); // Establish database connection with PDO
         try {
-            $DBH = new PDO("mysql:host=$host;dbname=$_SQL_DATABASE", $_SQL_USERNAME, $_SQL_PASSWORD);
+            $DBH = new PDO("mysql:host=$_SQL_ADDRESS;dbname=$_SQL_DATABASE", $_SQL_USERNAME, $_SQL_PASSWORD);
         } catch (PDOException $e) {
             echo $e->getMessage();
         } // Run Query
