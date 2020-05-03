@@ -36,8 +36,9 @@
 		echo "<table class=\"table2 tablectr\">";
 		echo "<tr><th>Menu Item</th><th>Quantity Sold</th></tr>";
 		foreach($result as $row) {
+			$item_name = TranslateText::convertText($row['ITEM']);
 			echo '<tr">';
-			echo "<td>" . $row['ITEM'] . "</td><td>" . $row['QUANTITY'] . "</td>";
+			echo "<td>" . $item_name . "</td><td>" . $row['QUANTITY'] . "</td>";
 			echo "</tr>";
 			$rownum++;
 		}
