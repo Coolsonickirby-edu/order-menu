@@ -29,7 +29,12 @@
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        $item = $result[0];
+        foreach($result as $item){
+            foreach ($item as $i){
+                echo $i . "<br>";
+            }
+            echo "<br>";
+        }
 
         // Close database connection
         $DBH = null;
@@ -53,7 +58,7 @@
         // $couponcode = $item["couponcode"];
 
 
-        echo "<pre>" . var_dump($item) . "</pre>";
+        //echo "<pre>" . var_dump($item) . "</pre>";
 
 
         // echo "<table><tr><th>Items</th><th>Quantity</th></tr>";
