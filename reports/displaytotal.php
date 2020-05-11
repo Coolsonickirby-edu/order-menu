@@ -39,11 +39,12 @@
 		echo "<tr><th>Menu Item</th><th>Quantity Sold</th></tr>";
 		foreach($result as $row) {
 			$item_name = TranslateText::convertText($row['ITEM']);
-			echo '<tr">';
+			echo '<tr>';
 			echo "<td>" . $item_name . "</td><td>" . $row['QUANTITY'] . "</td>";
 			echo "</tr>";
 			$rownum++;
 		}
+		
 		echo "</table>";
 
 		$DBH = null;

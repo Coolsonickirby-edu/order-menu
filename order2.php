@@ -22,10 +22,10 @@ $alfredo = substr(filter_input(INPUT_POST, 'alfredo', FILTER_SANITIZE_NUMBER_INT
 $couponcode = substr(filter_input(INPUT_POST, 'couponcode', FILTER_SANITIZE_STRING), 0, 15);
 
 
-$subtotal = filter_input(INPUT_POST, 'subtotal', FILTER_SANITIZE_NUMBER_FLOAT);;
-$taxes = filter_input(INPUT_POST, 'taxes', FILTER_SANITIZE_NUMBER_FLOAT);
-$discount = filter_input(INPUT_POST, 'discount', FILTER_SANITIZE_NUMBER_FLOAT);;
-$total = filter_input(INPUT_POST, 'total', FILTER_SANITIZE_NUMBER_FLOAT);;
+$subtotal = filter_input(INPUT_POST, 'subtotal', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+$taxes = filter_input(INPUT_POST, 'taxes', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+$discount = filter_input(INPUT_POST, 'discount', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+$total = filter_input(INPUT_POST, 'total', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
 $firstname = substr(filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_STRING), 0, 30);
 
