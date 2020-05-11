@@ -7,6 +7,8 @@
 	<meta name="description" content="CIS Restaurant: Lunch Menu">
 	<title>CIS Restaurant Menu</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="./report.css">
+
 </head>
 
 <body>
@@ -27,14 +29,14 @@
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
-		$query = "SELECT dayname(orderdate) AS DAY, count(*) TOTAL FROM payment GROUP BY dayname(orderdate)";
+		$query = "SELECT dayname(orderdate) AS DAY, count(*) TOTAL, count(*) TOTAL FROM payment GROUP BY dayname(orderdate)";
 		$stmt = $DBH->prepare($query);
 		$stmt->execute();
 		$result = $stmt->fetchAll();
 
 		echo "<table class=\"table2 tablectr\">";
 		echo "<tr><th>Day of Week</th><th>Total Orders Placed</th></tr>";
-		foreach($result as $row) {
+		foreach ($result as $row) {
 			echo '<tr">';
 			echo "<td>" . $row['DAY'] . "</td><td>" . $row['TOTAL'] . "</td>";
 			echo "</tr>";

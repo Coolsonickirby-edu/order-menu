@@ -7,6 +7,8 @@
 	<meta name="description" content="CIS Restaurant: Lunch Menu">
 	<title>CIS Restaurant Menu</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="./report.css">
+
 </head>
 
 <body>
@@ -37,14 +39,14 @@
 
 		echo "<table class=\"table2 tablectr\">";
 		echo "<tr><th>Menu Item</th><th>Quantity Sold</th></tr>";
-		foreach($result as $row) {
+		foreach ($result as $row) {
 			$item_name = TranslateText::convertText($row['ITEM']);
 			echo '<tr>';
 			echo "<td>" . $item_name . "</td><td>" . $row['QUANTITY'] . "</td>";
 			echo "</tr>";
 			$rownum++;
 		}
-		
+
 		echo "</table>";
 
 		$DBH = null;

@@ -7,6 +7,8 @@
 	<meta name="description" content="CIS Restaurant: Lunch Menu">
 	<title>CIS Restaurant Menu</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
+	<link rel="stylesheet" type="text/css" href="./report.css">
+
 </head>
 
 <body>

@@ -7,6 +7,8 @@
     <meta name="description" content="CIS Restaurant: Lunch Menu">
     <title>CIS Restaurant Menu</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="./report.css">
+
 </head>
 
 <body>
@@ -30,7 +32,7 @@
         $stmt->execute();
         $result = $stmt->fetchAll();
 
-        
+
         // Close database connection
         $DBH = null;
 
@@ -39,7 +41,7 @@
             $item_name = TranslateText::convertText($item["menuitem"]);
             echo "<tr><td>{$item["order_id"]}</td><td>{$item_name}</td><td>{$item["quantity"]}</td></tr>";
         }
-        
+
         echo "</table>";
         ?>
         <br>

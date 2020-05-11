@@ -10,5 +10,4 @@ $sql = " DELETE FROM payment; DELETE FROM orders;";
 
 $DBH->query($sql);
 
-
 $DBH = null;
