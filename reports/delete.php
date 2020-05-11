@@ -8,10 +8,7 @@ try {
 
 $sql = " DELETE FROM payment; DELETE FROM orders;";
 
-if ($DBH->query($sql) === TRUE) {
-    echo "Records deleted successfully";
-} else {
-    echo "Error deleting record: " . $DBH->error;
-}
+$DBH->query($sql);
+
 
 $DBH = null;
