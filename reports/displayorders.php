@@ -8,12 +8,14 @@
     <title>CIS Restaurant Menu</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="./report.css">
+    <script src="../js/jquery-3.5.0.min.js"></script>
 
 </head>
 
 <body>
     <div id="container">
         <h2 class="blue center">CIS 122 Restaurant - Menu Orders</h2>
+        <input type="text" id="search">
         <?php
         // database login credentials
         include('../config.php'); // Establish database connection with PDO
@@ -27,7 +29,7 @@
         $stmt = $DBH->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        echo "<table class=\"table2 tablectr\">";
+        echo "<table class=\"table2 tablectr\" id=\"results\">";
         echo "<tr><th>Payment No</th><th>Order Date/Time</th><th>Last Name</th><th>First Name</th><th>Phone No</th><th>Email</th><th>Sub-Total</th><th>Taxes</th><th>Discount</th><th>Total</th><th>Details</th></tr>";
         foreach ($result as $row) {
             echo '<tr">';
@@ -53,6 +55,17 @@
         ?>
         <br>
     </div><br>
+
+    <script>
+        $(document).ready(function() {
+            $("#search").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#results tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
