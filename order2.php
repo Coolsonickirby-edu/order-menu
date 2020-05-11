@@ -45,9 +45,6 @@ $CardNumber =  substr(filter_input(INPUT_POST, 'CardNumber', FILTER_SANITIZE_NUM
 
 $zipcode =  substr(filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_NUMBER_INT), 0, 6);
 
-echo $CardNumber . "<br>";
-
-
 // Use of PHP PDO prepared statements to prevent SQL injection
 // Insert into payment table
 

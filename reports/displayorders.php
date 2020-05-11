@@ -18,6 +18,7 @@
         <label for="search">Search: </label>
         <input type="text" id="search">
         <br>
+        <br>
         <?php
         // database login credentials
         include('../config.php'); // Establish database connection with PDO
