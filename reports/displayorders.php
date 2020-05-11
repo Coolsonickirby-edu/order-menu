@@ -15,7 +15,9 @@
 <body>
     <div id="container">
         <h2 class="blue center">CIS 122 Restaurant - Menu Orders</h2>
+        <label for="search">Search: </label>
         <input type="text" id="search">
+        <br>
         <?php
         // database login credentials
         include('../config.php'); // Establish database connection with PDO
@@ -29,10 +31,10 @@
         $stmt = $DBH->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();
-        echo "<table class=\"table2 tablectr\" id=\"results\">";
-        echo "<tr><th>Payment No</th><th>Order Date/Time</th><th>Last Name</th><th>First Name</th><th>Phone No</th><th>Email</th><th>Sub-Total</th><th>Taxes</th><th>Discount</th><th>Total</th><th>Details</th></tr>";
+        echo "<table class=\"table2 tablectr\">";
+        echo "<thead><tr><th>Payment No</th><th>Order Date/Time</th><th>Last Name</th><th>First Name</th><th>Phone No</th><th>Email</th><th>Sub-Total</th><th>Taxes</th><th>Discount</th><th>Total</th><th>Details</th></tr></thead>";
         foreach ($result as $row) {
-            echo '<tr">';
+            echo '<tbody id="results"><tr">';
             echo "<td>" . htmlspecialchars($row['payment_id']) . "</td>";
             $newdate = date('m/d/y g:i A', strtotime($row['orderdate']));
             echo "<td>" . $newdate . "</td>";
@@ -49,7 +51,7 @@
             echo "<td><a href=\"displayorders2.php?payment_id=" . htmlspecialchars($row['payment_id']) . "\">Details</a></td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</tbody></table>";
         // Close database connection
         $DBH = null;
         ?>
