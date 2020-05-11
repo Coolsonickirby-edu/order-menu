@@ -18,23 +18,19 @@
         <table>
             <tr>
                 <td><label for="mm">Enter Month (MM):</label></td>
-                <td><input type="text" name="mm" id="mm">
-                    </input></td>
+                <td><input type="text" name="mm" id="mm"></td>
             </tr>
             <tr>
                 <td><label for="dd">Enter Day (DD):</label></td>
-                <td><input type="text" name="dd" id="dd">
-                    </input></td>
+                <td><input type="text" name="dd" id="dd"></td>
             </tr>
             <tr>
                 <td><label for="yyyyStart">Enter Start Year (YYYY):</label></td>
-                <td><input type="text" name="yyyyStart" id="yyyyStart">
-                    </input></td>
+                <td><input type="text" name="yyyyStart" id="yyyyStart"></td>
             </tr>
             <tr>
                 <td><label for="yyyyEnd">Enter End Year (YYYY):</label></td>
-                <td><input type="text" name="yyyyEnd" id="yyyyEnd">
-                    </input></td>
+                <td><input type="text" name="yyyyEnd" id="yyyyEnd"></td>
             </tr>
         </table>
 
